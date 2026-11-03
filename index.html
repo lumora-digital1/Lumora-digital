@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Lumora Digital – Moderne Webseiten aus Neuss & Düsseldorf</title>
+
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
 <style>
   * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -25,7 +25,7 @@
   nav a::after { content: ""; position: absolute; left: 0; bottom: -4px; width: 0; height: 2px; background: #b44dff; transition: .3s; }
   nav a:hover::after { width: 100%; }
   nav a:hover { color: #fff; }
-  .hero { min-height: 90vh; display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 50px; align-items: center; padding: 60px 8%; }
+   .hero { min-height: 90vh; display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 50px; align-items: center; padding: 60px 8%; }
   .pill { display: inline-block; padding: 6px 16px; border: 1px solid #b44dff66; border-radius: 30px; font-size: 13px; color: #d9a6ff; margin-bottom: 20px; background: #b44dff15; }
   .hero h1 { font-size: clamp(36px, 5vw, 62px); line-height: 1.1; font-weight: 800; margin-bottom: 22px; }
   .shine { background: linear-gradient(90deg, #b44dff, #ff4dd8, #7a5cff, #b44dff); background-size: 300%; -webkit-background-clip: text; color: transparent; animation: shine 6s linear infinite; }
@@ -35,16 +35,11 @@
   .btn:hover { transform: translateY(-3px) scale(1.04); box-shadow: 0 0 50px #b44dffcc; }
   .btn.ghost { background: transparent; border: 1px solid #ffffff33; box-shadow: none; margin-left: 12px; }
   .heroimg { position: relative; animation: hover 6s ease-in-out infinite; }
-  .heroimg img { border-radius: 24px; height: 420px; border: 1px solid #b44dff55; box-shadow: 0 0 80px #b44dff55; }
-  .heroimg::before { content: ""; position: absolute; inset: -3px; border-radius: 26px; background: linear-gradient(45deg, #b44dff, #ff4dd8, #5a00ff); z-index: -1; filter: blur(20px); opacity: .6; }
-  @keyframes hover { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-18px); } }
-  .stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 20px; padding: 0 8% 40px; text-align: center; }
-  .stat h3 { font-size: 44px; font-weight: 800; color: #b44dff; text-shadow: 0 0 25px #b44dff88; }
-  .stat p { color: #999; }
-  section { padding: 100px 8%; }
-  h2 { text-align: center; font-size: clamp(30px, 4vw, 44px); font-weight: 800; margin-bottom: 12px; }
-  .sub { text-align: center; color: #999; margin-bottom: 55px; }
-  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 28px; }
+  .hero { min-height: 90vh; display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 50px; align-items: center; padding: 60px 8%; }
+  .pill { display: inline-block; padding: 6px 16px; border: 1px solid #b44dff66; border-radius: 30px; font-size: 13px; color: #d9a6ff; margin-bottom: 20px; background: #b44dff15; }
+  .hero h1 { font-size: clamp(36px, 5vw, 62px); line-height: 1.1; font-weight: 800; margin-bottom: 22px; }
+  .shine { background: linear-gradient(90deg, #b44dff, #ff4dd8, #7a5cff, #b44dff); background-size: 300%; -webkit-background-clip: text; color: transparent; animation: shine 6s linear infinite; }
+  @keyframes shine { to { background-position: 300%; } }  
   .card { background: #ffffff06; backdrop-filter: blur(10px); border: 1px solid #ffffff14; border-radius: 22px; padding: 34px; transition: transform .2s, border-color .3s, box-shadow .3s; transform-style: preserve-3d; }
   .card:hover { border-color: #b44dff; box-shadow: 0 0 40px #b44dff44; }
   .card.top { border-color: #b44dff; box-shadow: 0 0 40px #b44dff55; }
@@ -72,4 +67,173 @@
   form { max-width: 520px; margin: 0 auto; display: flex; flex-direction: column; gap: 15px; }
   input, textarea { background: #ffffff08; border: 1px solid #ffffff22; color: #fff; padding: 16px; border-radius: 14px; font-size: 16px; font-family: inherit; transition: .3s; }
   input:focus, textarea:focus { outline: none; border-color: #b44dff; box-shadow: 0 0 20px #b44dff55; }
-  footer { text-align: center; padding: 40px; color: #666; border-top: 1px solid
+  footer { text-align: center; padding: 40px; color: #666; border-top: 1px solid #ffffff10; margin-top: 80px; }
+  footer a:hover { color: #b44dff; }
+  .reveal { opacity: 0; transform: translateY(60px); transition: opacity 1s ease, transform 1s ease; }
+  .reveal.show { opacity: 1; transform: translateY(0); }
+  .delay1 { transition-delay: .15s; } .delay2 { transition-delay: .3s; }
+  @media (max-width: 700px) { nav { display: none; } .btn.ghost { margin: 12px 0 0; } }
+</style>
+</head>
+<body>
+
+<div class="gridbg"></div>
+<div class="blob b1"></div><div class="blob b2"></div><div class="blob b3"></div>
+<div id="glow"></div>
+
+<header>
+  <div class="logo">LUMORA <span>DIGITAL</span></div>
+  <nav>
+    <a href="#leistungen">Leistungen</a>
+    <a href="#pakete">Pakete</a>
+    <a href="#projekte">Projekte</a>
+    <a href="#kontakt">Kontakt</a>
+  </nav>
+</header>
+<div class="hero">
+  <div class="reveal">
+    <span class="pill">✦ Webdesign aus Neuss & Düsseldorf</span>
+    <h1>Webseiten, die dein Business <span class="shine">zum Leuchten bringen.</span></h1>
+    <p>Moderne, schnelle und einzigartige Webseiten für Unternehmen, die auffallen wollen – persönlich betreut, fair im Preis.</p>
+    <a href="#kontakt" class="btn">Kostenloses Erstgespräch</a>
+    <a href="#pakete" class="btn ghost">Pakete ansehen</a>
+  </div>
+  <div class="heroimg reveal delay1">
+    <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=1200" alt="Laptop mit Code">
+  </div>
+</div>
+
+<div class="stats reveal">
+  <div class="stat"><h3 data-count="7">0</h3><p>Tage bis zur fertigen Seite</p></div>
+  <div class="stat"><h3 data-count="100">0</h3><p>% mobiloptimiert</p></div>
+  <div class="stat"><h3 data-count="24">0</h3><p>Std. Antwortzeit</p></div>
+</div>
+<section id="leistungen">
+  <h2 class="reveal">Warum <span class="shine">Lumora?</span></h2>
+  <p class="sub reveal">Alles, was deine Webseite braucht – aus einer Hand.</p>
+  <div class="grid">
+    <div class="card tilt reveal"><div class="icon">⚡</div><h3>Blitzschnell</h3><p>Optimierte Ladezeiten, damit kein Kunde abspringt.</p></div>
+    <div class="card tilt reveal delay1"><div class="icon">📱</div><h3>Perfekt auf jedem Gerät</h3><p>Ob Handy, Tablet oder PC – deine Seite sieht überall top aus.</p></div>
+    <div class="card tilt reveal delay2"><div class="icon">🚀</div><h3>Bei Google sichtbar</h3><p>Suchmaschinenoptimiert, damit neue Kunden dich finden.</p></div>
+  </div>
+</section>
+<section id="pakete">
+  <h2 class="reveal">Pakete & <span class="shine">Preise</span></h2>
+  <p class="sub reveal">Transparent, fair und ohne versteckte Kosten.</p>
+  <div class="grid">
+    <div class="card tilt reveal">
+      <h3>Starter</h3>
+      <div class="price">299 € <span>einmalig</span></div>
+      <ul><li>One-Page-Webseite</li><li>Mobiloptimiert</li><li>Kontaktbereich</li><li>Infos & Öffnungszeiten</li></ul>
+      <a href="#kontakt" class="btn ghost" style="margin:0">Anfragen</a>
+    </div>
+    <div class="card tilt top reveal delay1">
+      <span class="badge">★ Beliebteste Wahl</span>
+      <h3>Business</h3>
+      <div class="price">599 € <span>einmalig</span></div>
+      <ul><li>Bis zu 5 Unterseiten</li><li>Google-Optimierung</li><li>Kontaktformular</li><li>Bildergalerie</li></ul>
+      <a href="#kontakt" class="btn">Jetzt starten</a>
+    </div>
+    <div class="card tilt reveal delay2">
+      <h3>Premium</h3>
+      <div class="price">ab 999 € <span>einmalig</span></div>
+      <ul><li>Individuelles Design</li><li>Online-Terminbuchung</li><li>Animationen & Effekte</li><li>Unbegrenzte Unterseiten</li></ul>
+      <a href="#kontakt" class="btn ghost" style="margin:0">Anfragen</a>
+    </div>
+  </div>
+  <p class="abo reveal">Optional: <b>Rundum-sorglos-Abo</b> mit Hosting, Wartung & Updates – ab 39 € / Monat</p>
+</section>
+
+<section id="projekte">
+  <h2 class="reveal">Ausgewählte <span class="shine">Projekte</span></h2>
+  <p class="sub reveal">Demo-Projekte, die zeigen, was möglich ist.</p>
+  <div class="grid">
+    <div class="project reveal">
+      <div class="imgwrap"><img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800" alt="Webdesign"></div>
+      <div class="txt"><span class="tag">Demo-Projekt</span><h3>Projekt Aurora</h3><p>Starker Unternehmensauftritt mit klarer Struktur.</p></div>
+    </div>
+    <div class="project reveal delay1">
+      <div class="imgwrap"><img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=800" alt="Laptop"></div>
+      <div class="txt"><span class="tag">Demo-Projekt</span><h3>Projekt Nova</h3><p>Moderne Seite mit integrierter Online-Buchung.</p></div>
+    </div>
+    <div class="project reveal delay2">
+      <div class="imgwrap"><img src="https://images.unsplash.com/photo-1551650975-87deedd944c3?w=800" alt="Smartphone"></div>
+      <div class="txt"><span class="tag">Demo-Projekt</span><h3>Projekt Pulse</h3><p>Mobile-first Design für Kunden unterwegs.</p></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2 class="reveal">So <span class="shine">läuft's ab</span></h2>
+  <p class="sub reveal">In vier Schritten zu deiner neuen Webseite.</p>
+  <div class="grid steps">
+    <div class="card reveal"><h3>Gespräch</h3><p>Wir besprechen deine Wünsche – kostenlos und unverbindlich.</p></div>
+    <div class="card reveal delay1"><h3>Design</h3><p>Du bekommst einen ersten Entwurf deiner Seite.</p></div>
+    <div class="card reveal delay2"><h3>Feinschliff</h3><p>Wir passen alles an, bis es perfekt ist.</p></div>
+    <div class="card reveal"><h3>Launch</h3><p>Deine Seite geht live – und ich bleibe für dich da.</p></div>
+  </div>
+</section>
+<section id="kontakt">
+  <div class="cta reveal">
+    <h2>Bereit, <span class="shine">aufzufallen?</span></h2>
+    <p class="sub">Schreib mir – ich melde mich innerhalb von 24 Stunden.</p>
+    <form action="mailto:DEINE-EMAIL@beispiel.de" method="post" enctype="text/plain">
+      <input type="text" name="Name" placeholder="Dein Name" required>
+      <input type="email" name="E-Mail" placeholder="Deine E-Mail" required>
+      <textarea name="Nachricht" rows="5" placeholder="Erzähl mir von deinem Projekt"></textarea>
+      <button type="submit" class="btn">Anfrage senden ✦</button>
+    </form>
+  </div>
+</section>
+
+<footer>
+  © 2026 Lumora Digital · Neuss & Düsseldorf · <a href="#">Impressum</a> · <a href="#">Datenschutz</a>
+</footer>
+<script>
+  const glow = document.getElementById('glow');
+  document.addEventListener('mousemove', e => { glow.style.left = e.clientX + 'px'; glow.style.top = e.clientY + 'px'; });
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(en => { if (en.isIntersecting) { en.target.classList.add('show'); io.unobserve(en.target); } });
+  }, { threshold: 0.15 });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+  const counters = new IntersectionObserver(entries => {
+    entries.forEach(en => {
+      if (!en.isIntersecting) return;
+      const el = en.target, end = +el.dataset.count; let n = 0;
+      const step = Math.max(1, Math.ceil(end / 60));
+      const t = setInterval(() => { n += step; if (n >= end) { n = end; clearInterval(t); } el.textContent = n; }, 25);
+      counters.unobserve(el);
+    });
+  });
+  document.querySelectorAll('[data-count]').forEach(el => counters.observe(el));
+  document.querySelectorAll('.tilt').forEach(card => {
+    card.addEventListener('mousemove', e => {
+      const r = card.getBoundingClientRect();
+      const x = (e.clientX - r.left) / r.width - 0.5, y = (e.clientY - r.top) / r.height - 0.5;
+      card.style.transform = `perspective(800px) rotateY(${x * 12}deg) rotateX(${-y * 12}deg) scale(1.03)`;
+    });
+    card.addEventListener('mouseleave', () => card.style.transform = '');
+  });
+</script>
+
+</body>
+</html>
+<style>
+#intro{position:fixed;inset:0;z-index:9999;background:#050505;display:flex;flex-direction:column;align-items:center;justify-content:center;cursor:pointer;transition:transform 1.2s cubic-bezier(.7,0,.3,1),opacity 1.2s;}
+#intro h1{font-family:'Poppins',sans-serif;font-size:clamp(40px,11vw,120px);font-weight:800;letter-spacing:4px;text-align:center;line-height:1.1;background:linear-gradient(90deg,#b44dff,#ff4dd8,#7a5cff,#b44dff);background-size:300%;-webkit-background-clip:text;color:transparent;animation:shine 4s linear infinite,pulse 2.5s ease-in-out infinite;}
+#intro p{color:#d9a6ff;margin-top:24px;letter-spacing:4px;font-size:14px;animation:blink 1.6s ease-in-out infinite;}
+@keyframes pulse{0%,100%{filter:drop-shadow(0 0 20px #b44dff);}50%{filter:drop-shadow(0 0 50px #ff4dd8);}}
+@keyframes blink{50%{opacity:.3;}}
+#intro.out{transform:scale(6);opacity:0;pointer-events:none;}
+body.locked{overflow:hidden;}
+body.locked > *:not(#intro){transform:scale(.85);opacity:0;}
+body > *:not(#intro){transition:transform 1.2s ease,opacity 1.2s ease;}
+</style>
+<div id="intro"><h1>LUMORA<br>DIGITAL</h1><p>TIPPEN ZUM BETRETEN</p></div>
+<script>
+document.body.classList.add('locked');
+document.getElementById('intro').addEventListener('click',function(){this.classList.add('out');document.body.classList.remove('locked');setTimeout(()=>this.remove(),1300);});
+</script>
+
+ 
+
