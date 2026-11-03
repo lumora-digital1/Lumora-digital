@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lumora Digital – Moderne Webseiten aus Neuss & Düsseldorf</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Poppins', sans-serif; background: #050505; color: #f2f2f2; line-height: 1.6; overflow-x: hidden; }
+  a { color: inherit; text-decoration: none; }
+  img { width: 100%; display: block; object-fit: cover; }
+  .blob { position: fixed; border-radius: 50%; filter: blur(120px); opacity: .35; z-index: -2; animation: float 18s ease-in-out infinite; }
+  .b1 { width: 500px; height: 500px; background: #9d00ff; top: -150px; left: -150px; }
+  .b2 { width: 400px; height: 400px; background: #ff00d4; bottom: -100px; right: -100px; animation-delay: -6s; }
+  .b3 { width: 300px; height: 300px; background: #5a00ff; top: 40%; left: 50%; animation-delay: -12s; }
+  @keyframes float { 0%,100% { transform: translate(0,0) scale(1); } 33% { transform: translate(120px,80px) scale(1.15); } 66% { transform: translate(-80px,120px) scale(.9); } }
+  #glow { position: fixed; width: 400px; height: 400px; border-radius: 50%; background: radial-gradient(circle, #b44dff33, transparent 70%); pointer-events: none; z-index: -1; transform: translate(-50%,-50%); transition: left .15s, top .15s; }
+  .gridbg { position: fixed; inset: 0; z-index: -3; background-image: linear-gradient(#ffffff08 1px, transparent 1px), linear-gradient(90deg, #ffffff08 1px, transparent 1px); background-size: 60px 60px; }
+  header { display: flex; justify-content: space-between; align-items: center; padding: 18px 8%; position: sticky; top: 0; z-index: 100; backdrop-filter: blur(14px); background: #05050599; border-bottom: 1px solid #ffffff10; }
+  .logo { font-size: 24px; font-weight: 800; letter-spacing: 1px; }
+  .logo span { background: linear-gradient(90deg, #b44dff, #ff4dd8); -webkit-background-clip: text; color: transparent; }
+  nav a { margin-left: 28px; color: #bbb; font-size: 15px; position: relative; }
+  nav a::after { content: ""; position: absolute; left: 0; bottom: -4px; width: 0; height: 2px; background: #b44dff; transition: .3s; }
+  nav a:hover::after { width: 100%; }
+  nav a:hover { color: #fff; }
+  .hero { min-height: 90vh; display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 50px; align-items: center; padding: 60px 8%; }
+  .pill { display: inline-block; padding: 6px 16px; border: 1px solid #b44dff66; border-radius: 30px; font-size: 13px; color: #d9a6ff; margin-bottom: 20px; background: #b44dff15; }
+  .hero h1 { font-size: clamp(36px, 5vw, 62px); line-height: 1.1; font-weight: 800; margin-bottom: 22px; }
+  .shine { background: linear-gradient(90deg, #b44dff, #ff4dd8, #7a5cff, #b44dff); background-size: 300%; -webkit-background-clip: text; color: transparent; animation: shine 6s linear infinite; }
+  @keyframes shine { to { background-position: 300%; } }
+  .hero p { color: #aaa; font-size: 18px; margin-bottom: 35px; max-width: 520px; }
+  .btn { display: inline-block; background: linear-gradient(90deg, #9d00ff, #d43dff); color: #fff; padding: 15px 34px; border-radius: 40px; font-weight: 600; border: none; cursor: pointer; font-size: 16px; font-family: inherit; box-shadow: 0 0 30px #b44dff77; transition: .3s; }
+  .btn:hover { transform: translateY(-3px) scale(1.04); box-shadow: 0 0 50px #b44dffcc; }
+  .btn.ghost { background: transparent; border: 1px solid #ffffff33; box-shadow: none; margin-left: 12px; }
+  .heroimg { position: relative; animation: hover 6s ease-in-out infinite; }
+  .heroimg img { border-radius: 24px; height: 420px; border: 1px solid #b44dff55; box-shadow: 0 0 80px #b44dff55; }
+  .heroimg::before { content: ""; position: absolute; inset: -3px; border-radius: 26px; background: linear-gradient(45deg, #b44dff, #ff4dd8, #5a00ff); z-index: -1; filter: blur(20px); opacity: .6; }
+  @keyframes hover { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-18px); } }
+  .stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 20px; padding: 0 8% 40px; text-align: center; }
+  .stat h3 { font-size: 44px; font-weight: 800; color: #b44dff; text-shadow: 0 0 25px #b44dff88; }
+  .stat p { color: #999; }
+  section { padding: 100px 8%; }
+  h2 { text-align: center; font-size: clamp(30px, 4vw, 44px); font-weight: 800; margin-bottom: 12px; }
+  .sub { text-align: center; color: #999; margin-bottom: 55px; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 28px; }
+  .card { background: #ffffff06; backdrop-filter: blur(10px); border: 1px solid #ffffff14; border-radius: 22px; padding: 34px; transition: transform .2s, border-color .3s, box-shadow .3s; transform-style: preserve-3d; }
+  .card:hover { border-color: #b44dff; box-shadow: 0 0 40px #b44dff44; }
+  .card.top { border-color: #b44dff; box-shadow: 0 0 40px #b44dff55; }
+  .icon { font-size: 34px; margin-bottom: 14px; }
+  .card h3 { font-size: 22px; margin-bottom: 8px; }
+  .card p { color: #aaa; }
+  .badge { display: inline-block; font-size: 12px; background: linear-gradient(90deg, #9d00ff, #d43dff); padding: 4px 12px; border-radius: 20px; margin-bottom: 10px; }
+  .price { font-size: 42px; font-weight: 800; margin: 10px 0 18px; }
+  .price span { font-size: 16px; color: #888; font-weight: 400; }
+  .card ul { list-style: none; color: #bbb; margin-bottom: 25px; }
+  .card li { margin: 10px 0; }
+  .card li::before { content: "✦ "; color: #b44dff; }
+  .abo { text-align: center; color: #aaa; margin-top: 40px; }
+  .abo b { color: #d9a6ff; }
+  .project { border-radius: 22px; overflow: hidden; background: #ffffff06; border: 1px solid #ffffff14; transition: .4s; }
+  .project .imgwrap { overflow: hidden; height: 220px; }
+  .project img { height: 100%; transition: transform .6s; }
+  .project:hover img { transform: scale(1.1); }
+  .project:hover { border-color: #b44dff; box-shadow: 0 0 40px #b44dff44; transform: translateY(-8px); }
+  .project .txt { padding: 22px; }
+  .tag { font-size: 12px; color: #d9a6ff; letter-spacing: 1px; text-transform: uppercase; }
+  .steps { counter-reset: s; }
+  .steps .card::before { counter-increment: s; content: "0" counter(s); font-size: 46px; font-weight: 800; background: linear-gradient(90deg, #b44dff, #ff4dd8); -webkit-background-clip: text; color: transparent; display: block; margin-bottom: 8px; }
+  .cta { text-align: center; border-radius: 30px; margin: 0 8%; padding: 70px 30px; background: linear-gradient(135deg, #2a0045, #0a0a0a); border: 1px solid #b44dff55; box-shadow: 0 0 80px #b44dff33; }
+  form { max-width: 520px; margin: 0 auto; display: flex; flex-direction: column; gap: 15px; }
+  input, textarea { background: #ffffff08; border: 1px solid #ffffff22; color: #fff; padding: 16px; border-radius: 14px; font-size: 16px; font-family: inherit; transition: .3s; }
+  input:focus, textarea:focus { outline: none; border-color: #b44dff; box-shadow: 0 0 20px #b44dff55; }
+  footer { text-align: center; padding: 40px; color: #666; border-top: 1px solid
